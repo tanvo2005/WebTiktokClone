@@ -1,0 +1,95 @@
+.wrapper {
+    --search-button-width: 52px;
+
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 1px 1px rgba(0 0 0 / 12%);
+    display: flex;
+    justify-content: center;
+}
+.inner {
+    height: 100%;
+    width: 1150px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper {
+}
+
+.logo {
+    display: flex;
+    align-items: center; // căn giữa theo chiều cao
+}
+.search {
+    position: relative;
+    display: flex;
+    width: 361px;
+    height: var(--search-height);
+    padding-left: 16px;
+    background-color: rgba(22, 24, 25, 0.06);
+    border-radius: 92px;
+    border: 1.5px solid transparent;
+
+    input {
+        flex: 1; // để căn các thành phần dài ra bănghf thẻ input
+        height: 100%;
+        font-size: 1.6rem;
+        color: var(--black);
+        border: none;
+        outline: none; // bỏ đi outline khi focus
+        background-color: transparent;
+        caret-color: var(--primary);
+    }
+
+    // sủ lý việc tahy đổi màu icon tìm kiếm khi thẻ input có giá trị khác
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 25, 0.75);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 9px;
+        right: 52px;
+        height: calc(var(--search-height) - 18px);
+        width: 1px;
+        background-color: rgba(22, 24, 25, 0.12);
+    }
+    // xử lí việc focus cho thẻ toàn bộ thẻ div khi nhấn vào input
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 25, 0.2);
+    }
+}
+.search-input {
+}
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--search-button-width) * 1.25);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgba(22, 24, 25, 0.34);
+}
+.search-btn {
+    width: 53px;
+    height: 100%;
+    border-top-right-radius: 92px;
+    border-bottom-right-radius: 92px;
+    font-size: 1.8rem;
+    color: rgba(22, 24, 25, 0.34);
+
+    // hover cho thẻ bên trên
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 25, 0.03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 25, 0.06);
+    }
+}
+.actions {
+}

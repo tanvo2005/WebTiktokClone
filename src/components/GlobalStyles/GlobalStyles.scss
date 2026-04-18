@@ -5,8 +5,16 @@
 
 :root {
     --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
+
+    // defaulayout
+    --default-layout-width: 1150px;
+    --search-height: 46px;
 }
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 html {
@@ -18,4 +26,17 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed; // tối ưu để hiển thị font chữ nhanh nhất
+    color: var(--text-color);
+}
+// các đặt các thuộc tính bắt buộc cho 1 số thẻ hay dùng ở phạm vi global
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
